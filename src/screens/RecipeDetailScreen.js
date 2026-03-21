@@ -20,12 +20,21 @@ import {
     const navigation = useNavigation();
     const dispatch = useDispatch();
   
+    // const favoriteRecipes = useSelector(
+    //   (state) => state.favorites.favoriteRecipes
+    // );
+  
+    // const isFavourite = favoriteRecipes?.some(
+    //   (item) => item.idFood === recipe.idFood
+    // );
+
+    // ✅ NEW
     const favoriteRecipes = useSelector(
-      (state) => state.favorites.favoriteRecipes
+        (state) => state.favorites.favoriteRecipes
     );
   
-    const isFavourite = favoriteRecipes?.some(
-      (item) => item.idFood === recipe.idFood
+    const isFavourite = favoriteRecipes.some(
+        (item) => item.idFood === recipe.idFood
     );
   
     const handleToggleFavorite = () => {
